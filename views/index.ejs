@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public API</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Cocktail Quest </h1>
+        <div>
+            <% if(locals.cocktail) { %>
+                <h2> <%= cocktail %> </h2>
+                <img src= <%= image %>>
+                <div class="info">
+                    <div class="cat">
+                        <h3> Alcoholic? </h3><% if (alcohol === "Alcoholic") { %> 
+                            <p>Yes</p> 
+                        <% } else { %>
+                            <p>No</p>
+                        <% } %>
+                    </div>
+                    <div class="cat">
+                        <h3> Category </h3>
+                        <p> <%= category %> </p>
+                    </div>
+                </div>
+                <h3> Instructions </h3>
+                <p> <%= instructions %> </p>
+            <% } else { %>
+                <h2>Discover Your Perfect Cocktail at the Press of a Button!</h2>
+            <% } %>
+                <form action = "/generate" method="POST">
+                <button type="submit">Generate</button>
+                <form action = "/generate1" method="POST">
+                <button type="submit" class="alcohol">Alcohol Only</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
